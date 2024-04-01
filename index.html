@@ -29,35 +29,17 @@
             <div class="main_menu">
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<!-- <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a> -->
 						<h2 style="color: white;">SYRFELIX</h2>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 								<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
 								<li class="nav-item"><a class="nav-link" href="#about">About</a></li> 
 								<li class="nav-item"><a class="nav-link" href="#Community">Community</a></li> 
-								<!-- <li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
-									</ul>
-								</li>  -->
-								<!-- <li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
-									</ul>
-								</li>  -->
-								<!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
 							</ul>
 						</div> 
 					</div>
@@ -108,9 +90,9 @@
 									
 								style="margin-top:1rem;"
 								>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="https://www.instagram.com/syrfelix_?igsh=MWhkaHkwenRobnV5bQ=="><i class="fa fa-instagram"></i></a></li>
+										<li><a href="https://x.com/Felix_Habriah?t=SXsR6adCGw4f8kDysuD1kw&s=09"><i class="fa fa-twitter"></i></a></li>
+										<!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
 									</ul>
 								</div>
 							</div>
@@ -460,7 +442,7 @@ and Teamwork.
 							</p>
 						</div>
 					</div>
-					<div class="video_banner">
+					<div class="video_banner" id="video_banner">
 						
 						<div style="border: 5px solid white;border-radius: 100%;width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
 							<a 
@@ -469,7 +451,14 @@ and Teamwork.
 							></a>
 						</div>
 							
-					</div>	
+					</div>						
+					<video width="640" height="360" 
+					style="display: none;"
+					controls id="actual_video">
+						<source src="img/engagementagencyvideo.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+  
 				</div>
 				
 			</div>
@@ -661,7 +650,7 @@ and Teamwork.
 							</p>
         					<p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         				</aside>
         			</div>
@@ -687,9 +676,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         
         
-        
-        
-        
+        <script>
+			 var actual_video = document.getElementById("actual_video");
+			 var video_banner = document.getElementById("video_banner");
+		
+		video_banner.addEventListener('click',e=>{
+			console.log("Hello worlkd")
+			video_banner.style='display:none'
+			actual_video.style='display: block'
+			actual_video.play()
+		})
+		</script>
+		
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.3.1.min.js"></script>
@@ -708,24 +706,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/mail-script.js"></script>
         <script src="js/theme.js"></script>
    
-	<script>
-		const input = document.getElementById("text");
-const copyButton = document.getElementById("copy");
-
-const copyText = (e) => {
-  // window.getSelection().selectAllChildren(textElement);
-  input.select(); //select input value
-  document.execCommand("copy");
-  e.currentTarget.setAttribute("tooltip", "Copied!");
-};
-
-const resetTooltip = (e) => {
-  e.currentTarget.setAttribute("tooltip", "Copy to clipboard");
-};
-
-copyButton.addEventListener("click", (e) => copyText(e));
-copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
-
-	</script>
 	</body>
 </html>
